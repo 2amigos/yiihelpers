@@ -16,7 +16,7 @@ class FinanceLibHelper
 	 *  used for black-scholes pricing formula
 	 */
     public static function cnd($val)
-	{
+    {
         $p = floatval(0.2316419);
         $b1 = floatval(0.319381530);
         $b2 = floatval(-0.356563782);
@@ -31,54 +31,52 @@ class FinanceLibHelper
 	}
 
 	/**
-	 *	BlackScholesCalculator()
-	 *	Computes the theoretical price of an equity option.
-	 * 	allows you to figure out the value of a European call or put option.  The calculator uses the stock's current share price, 
-	 *	the option strike price, time to expiration, risk-free interest rate, and volatility to derive the value of these options.  
-	 *	The Black-Scholes calculation used here assumes no dividend is paid on the stock.
+	 *  BlackScholesCalculator()
+	 *  Computes the theoretical price of an equity option.
+	 *  allows you to figure out the value of a European call or put option.  The calculator uses the stock's current share price,
+	 *  the option strike price, time to expiration, risk-free interest rate, and volatility to derive the value of these options.
+	 *  The Black-Scholes calculation used here assumes no dividend is paid on the stock.
 	 * 
-	 * 	@param callPutFlag 					The Call Put Flag. (Required)."c" = Call else considered Put option.
-	 * 	@param $currAssetPrice      The current asset price. (Required). 
-	 * 	@param $exercisePrice      	Exercise price. (Required)
-	 * 	@param $timeToMaturity      Time to maturity. (Required)
-	 * 	@param $riskFreeInterestRate Risk-free Interest rate. (Required)
-	 * 	@param $annualVolatility     Annualized volatility. (Required)
-	 * 	@return Returns a number. 
+	 *  @param callPutFlag 					The Call Put Flag. (Required)."c" = Call else considered Put option.
+	 *  @param $currAssetPrice      The current asset price. (Required).
+	 *  @param $exercisePrice      	Exercise price. (Required)
+	 *  @param $timeToMaturity      Time to maturity. (Required)
+	 *  @param $riskFreeInterestRate Risk-free Interest rate. (Required)
+	 *  @param $annualVolatility     Annualized volatility. (Required)
+	 *  @return Returns a number.
 	 */
 	 
-	public static function BlackScholesCalculator ($callPutFlag, $currAssetPrice, $exercisePrice, $timeToMaturity, $riskFreeInterestRate, $annualVolatility) 
-	{
+    public static function BlackScholesCalculator ($callPutFlag, $currAssetPrice, $exercisePrice, $timeToMaturity, $riskFreeInterestRate, $annualVolatility)
+    {
         $d1 = ( log($currAssetPrice / $exercisePrice) + ($riskFreeInterestRate + (pow($annualVolatility,2)) / 2) * $timeToMaturity) / ($annualVolatility * (pow($timeToMaturity,0.5)));
         $d2 = $d1 - $annualVolatility * (pow($timeToMaturity,0.5));
 
-        if ($callPutFlag === 'c')
-        {
+        if ($callPutFlag === 'c') {
             return $currAssetPrice * self::cnd($d1) - $exercisePrice * exp(-$riskFreeInterestRate * $timeToMaturity) * self::cnd($d2);
         } else {
             return $exercisePrice * exp(-$riskFreeInterestRate * $timeToMaturity) * self::cnd(-$d2) - $currAssetPrice * self::cnd(-$d1);
         }
-	}
+    }
 
 	/**
-	 *	IRRCalculator()
-	 *	Calculates Internal Rate of Return (IRR) similar to excel IRR function.
+	 *  IRRCalculator()
+	 *  Calculates Internal Rate of Return (IRR) similar to excel IRR function.
 	 * 
-	 * 	@param $cashFlow	array of cashflow (Required).
-	 * 	@return Returns a number. 
+	 *  @param $cashFlow	array of cashflow (Required).
+	 *  @return Returns a number.
 	 */
-	public static function IRRCalculator($cashFlowArray) 
-	{
-		$base = floatval(0.1);
-		$inc  = floatval(0.00001);
-		do 
-		{
+    public static function IRRCalculator($cashFlowArray)
+    {
+        $base = floatval(0.1);
+        $inc  = floatval(0.00001);
+        do {
             $base += $inc;
             $netPresentValue = 0;
             for ($i=1; $i <= count($cashFlowArray); $i++)
-                    $netPresentValue += $cashFlowArray[$i-1] / (pow((1 + $base),$i));
-		} while ($netPresentValue > 0);
+                $netPresentValue += $cashFlowArray[$i-1] / (pow((1 + $base),$i));
+        } while ($netPresentValue > 0);
 			
         $irr =  $base * 100;
         return $irr;
-	}
+    }
 }
