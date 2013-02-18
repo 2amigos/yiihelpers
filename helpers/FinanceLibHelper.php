@@ -15,7 +15,8 @@ class FinanceLibHelper
 	 *  cumulative normal distribution function from Sanjay Ichalkaranje from http://php.net/manual/en/book.math.php
 	 *  used for black-scholes pricing formula
 	 */
-	public static function cnd($val) {
+	public static function cnd($val) 
+	{
 		$p = floatval(0.2316419);
 		$b1 = floatval(0.319381530);
 		$b2 = floatval(-0.356563782);
@@ -45,7 +46,8 @@ class FinanceLibHelper
 	 * 	@return Returns a number. 
 	 */
 	 
-	public static function BlackScholesCalculator ($callPutFlag, $currAssetPrice, $exercisePrice, $timeToMaturity, $riskFreeInterestRate, $annualVolatility) {
+	public static function BlackScholesCalculator ($callPutFlag, $currAssetPrice, $exercisePrice, $timeToMaturity, $riskFreeInterestRate, $annualVolatility) 
+	{
 		$d1 = ( log($currAssetPrice / $exercisePrice) + ($riskFreeInterestRate + (pow($annualVolatility,2)) / 2) * $timeToMaturity) / ($annualVolatility * (pow($timeToMaturity,0.5)));
 		$d2 = $d1 - $annualVolatility * (pow($timeToMaturity,0.5));
 
@@ -55,5 +57,28 @@ class FinanceLibHelper
 		} else {
 			return $exercisePrice * exp(-$riskFreeInterestRate * $timeToMaturity) * self::cnd(-$d2) - $currAssetPrice * self::cnd(-$d1);
 		}
+	}
+
+	/**
+	 *	IRRCalculator()
+	 *	Calculates Internal Rate of Return (IRR) similar to excel IRR function.
+	 * 
+	 * 	@param $cashFlow	array of cashflow (Required).
+	 * 	@return Returns a number. 
+	 */
+	public static function IRRCalculator($cashFlowArray) 
+	{
+		$base = floatval(0.1);
+		$inc  = floatval(0.00001);
+		do 
+			{
+				$base += $inc;
+				$netPresentValue = 0;
+				for ($i=1; $i <= count($cashFlowArray); $i++)
+						$netPresentValue += $cashFlowArray[$i-1] / (pow((1 + $base),$i));    
+			} while ($netPresentValue > 0);
+			
+			$irr =  $base * 100;	
+			return $irr;
 	}
 }
