@@ -21,7 +21,7 @@ Example use:
   echo FinanceLibHelper::BlackScholesCalculator($CallPutFlag,$S,$X,$T,$r,$v);
 ~~~ 
 
-#####BlackScholesCalculator()
+#####IRRCalculator()
 Calculates Internal Rate of Return (IRR) similar to excel IRR function from a cashflow array.
 
 Example of use:
