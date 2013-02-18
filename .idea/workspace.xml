@@ -2,7 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="867ff9f7-9ecb-4834-a4f4-95a1d7aea089" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/helpers/FinanceLibHelper.php" afterPath="$PROJECT_DIR$/helpers/FinanceLibHelper.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/helpers/.gitignore" />
+      <change type="DELETED" beforePath="C:\ClevertechBuilds\YiiHelpers\.idea\.name" afterPath="" />
+      <change type="DELETED" beforePath="C:\ClevertechBuilds\YiiHelpers\.idea\YiiHelpers.iml" afterPath="" />
+      <change type="DELETED" beforePath="C:\ClevertechBuilds\YiiHelpers\.idea\encodings.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\ClevertechBuilds\YiiHelpers\.idea\misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\ClevertechBuilds\YiiHelpers\.idea\modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\ClevertechBuilds\YiiHelpers\.idea\scopes\scope_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\ClevertechBuilds\YiiHelpers\.idea\vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\ClevertechBuilds\YiiHelpers\.idea\workspace.xml" afterPath="" />
     </list>
     <ignored path="YiiHelpers.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,7 +33,7 @@
       <file leaf-file-name="FinanceLibHelper.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/helpers/FinanceLibHelper.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="80" column="4" selection-start="3208" selection-end="3208" vertical-scroll-proportion="0.9597633">
+            <state line="80" column="5" selection-start="3209" selection-end="3209" vertical-scroll-proportion="0.9597633">
               <folding />
             </state>
           </provider>
@@ -35,6 +43,15 @@
         <entry file="file://$PROJECT_DIR$/../idt/frontend/helpers/DiamondHelperNew.php">
           <provider selected="true" editor-type-id="text-editor">
             <state line="266" column="8" selection-start="5686" selection-end="5686" vertical-scroll-proportion="83.03846">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../idt/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="0" selection-start="50" selection-end="80" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -54,6 +71,7 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/helpers/FinanceLibHelper.php" />
+        <option value="$PROJECT_DIR$/helpers/.gitignore" />
       </list>
     </option>
   </component>
@@ -131,7 +149,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="options.lastSelected" value="preferences.sourceCode.PHP" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../idt/frontend/helpers/DiamondHelperNew.php" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../idt/.gitignore" />
     <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
   </component>
@@ -154,6 +172,9 @@
     </servers>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
     <list size="0" />
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
@@ -266,9 +287,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../idt/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="0" selection-start="50" selection-end="80" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/helpers/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="0" selection-start="30" selection-end="30" vertical-scroll-proportion="0.039035592">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/helpers/FinanceLibHelper.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="80" column="4" selection-start="3208" selection-end="3208" vertical-scroll-proportion="0.9597633">
+        <state line="80" column="5" selection-start="3209" selection-end="3209" vertical-scroll-proportion="0.9597633">
           <folding />
         </state>
       </provider>
