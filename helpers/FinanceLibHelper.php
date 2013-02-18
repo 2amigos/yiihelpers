@@ -79,4 +79,17 @@ class FinanceLibHelper
         $irr =  $base * 100;
         return $irr;
     }
+
+    /**
+     *  compoundInterest()
+     *  Calculate the compound interest after n years.
+     *
+     *  @param $rate        Interest rate (% as decimal).
+     *  @param $principal   Principal
+     *  @param $duration    Duration of the loan in years.
+     *  @return Returns a number.
+     */
+    public static function compoundInterest($rate, $principal, $duration){
+        return ($principal * pow((1 + $rate),$duration));
+    }
 }

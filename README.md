@@ -29,3 +29,13 @@ Example of use:
   $cashflowArr = array(-4000,1200,1410,1875,1050,1350,1025);
   echo FinanceLibHelper::IRRCalculator($cashflowArr);
 ~~~
+
+#####compoundInterest()
+Calculate the compound interest after x years on a specific rate.
+
+Example of use:
+~~~
+  echo '30,000 dollars for 1 year at 6.25%: ' .round(FinanceLibHelper::compoundInterest(0.0625, 30000, 1),2).'<br>';
+  echo '30,000 dollars for 2 years at 6.25%: ' .round(FinanceLibHelper::compoundInterest(0.0625, 30000, 2),2).'<br>';
+  echo '30,000 dollars for 3 years at 6.25%: ' .round(FinanceLibHelper::compoundInterest(0.0625, 30000, 3),2);
+~~~
