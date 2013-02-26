@@ -1,5 +1,5 @@
 {
-    "name": "2amigos/escriptboost",
+    "name": "2amigos/yii-helpers",
     "description": "Libraries of useful helper functions to give your yii apps an extra hand.",
     "keywords": ["yii", "helper"],
     "type": "yii-extension",
